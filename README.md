@@ -1,7 +1,7 @@
 # How to use
 
 1) In your directive code change "sampleApp.directive"  to "yourAppName.directive"
-2) Insert this code to your html template or separate html file
+2) Insert this code to your html template or separate html file. If you use separate html file remove tags scripts and set path to file in templateUrl in picker.js
 ```sh
  <script type='text/ng-template' id='calendar-template'>
     		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -24,7 +24,7 @@
     		</div>   		
 	</script>
 ```
-3) Use picker.js and calendar.css files
+3) Include picker.js and calendar.css files
 4) For using picker place next code for input
 ```sh
 	<input ng-click="pickerShow=!pickerShow" ng-model="dateTime" type="text">
