@@ -30,4 +30,5 @@
 	<input ng-click="pickerShow=!pickerShow" ng-model="dateTime" type="text">
 	<calendar></calendar>
 ```
+5) Working example in example directory
 Good luck)
