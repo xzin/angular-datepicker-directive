@@ -1,0 +1,114 @@
+$padding:15px;
+$grey:#DEDEDE;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.calendar{
+	width: 375px;   
+	height: 500px;
+    font-family: 'Open Sans', sans-serif;
+   -webkit-box-shadow: 5px 5px 5px -1px rgba(239,239,239,1);
+	-moz-box-shadow: 5px 5px 5px -1px rgba(239,239,239,1);
+	box-shadow: 5px 5px 5px -1px rgba(239,239,239,1);
+}
+.info{
+	width:330px;
+	position: relative;
+	text-align: center;
+	margin-top:10px;
+	height: 50px;
+	line-height: 55px;
+}
+.calendar-header{
+	padding:$padding;
+	background: #FCFCFC;
+}
+.calendar-body{
+	background:white;
+	 padding:$padding;
+	 min-height: 300px;
+}
+.month-switch{ 
+	position:absolute;
+	background: none;
+	border:none;
+	color:#dedede;
+	font-size: 42px;
+    cursor: pointer;
+    padding: 5px 10px;
+    &:hover{
+    	background:#EAF7FD;
+    }
+	&.month-prev{		
+		left:0;
+	}
+	&.month-next{
+		right:0;
+	}
+}
+.weekNames{
+	&>span{
+		width:44px;
+		display: inline-block;
+		text-transform: capitalize;
+		text-align: center;
+		color:lightgrey;
+	}
+}
+.days{
+	width:310px;
+	&>span{
+		width:42px;
+		height:42px;
+		display: inline-block;
+		text-align: center;
+		border:1px solid $grey;
+		margin-bottom:-1px;
+		line-height: 2.5;
+		cursor:pointer;
+		&.active{
+			background: #77CF57;
+			color:white;
+		}
+		&:hover{
+			background: #49A5F0;
+			color:white;
+		}
+	}
+}
+.picker-input{
+	border:1px solid $grey;	
+	padding:5px 10px;
+	&.input-date{
+		width: 160px;
+	}
+	&.input-time{
+		width:60px;
+	}
+	&:disabled{
+		background: white;
+	}
+}
+.picker-undo-btn{
+	background: none;
+	border:none;
+	color:$grey;
+	text-decoration: underline;
+}
+.picker-confirm-btn{
+	background: #77CF57;
+	height:40px;
+	width: 40px;
+	color:white;
+	border:none;
+	margin-right: 20px;
+	float:right;
+	@include border-radius(20px);
+    font-size: 24px;
+    cursor:pointer;
+}

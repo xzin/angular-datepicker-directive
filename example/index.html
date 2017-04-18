@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="sampleApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+		input{
+			padding:5px 10px;
+		}
+    </style>
+    <script src="lib/angular.min.js"></script>  
+    <script src="script.js"></script>
+    <script src="js/picker-min.js"></script>
+    <script type='text/ng-template' id='calendar-template'>
+    		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    		<link type="text/css" rel="stylesheet" href="css/calendar.css">
+    		<div class="calendar" ng-show="showPicker">
+    			<div class="calendar-header">
+					<input type="text" disabled class="picker-input input-date" ng-model="userDate" placeholder="DD/MM/YYYY" />
+					<input ng-click="userTime=''" type="text" class="picker-input input-time" ng-model="userTime" ng-change="userTime=timeFormat(userTime)" placeholder="HH:mm" />					
+				</div>
+				<div class="info">
+						<button class="month-switch month-prev" ng-click="prevMonth(today)">&lsaquo;</button>
+						{{date}}
+						<button class="month-switch month-next" ng-click="nextMonth(today)">&rsaquo;</button>
+					</div>
+				<div class="calendar-body">
+					<div class="weekNames"></div><div class="days"></div>
+				</div>
+				<button class="picker-undo-btn" ng-click="undoSelect()">Отменить</button>
+    			<button class="picker-confirm-btn" ng-click="setDate()">&check;</button>
+    		</div>   		
+	</script>
+</head>
+<body>
+	<input ng-click="pickerShow=!pickerShow" ng-model="dateTime" type="text">
+	<calendar></calendar>
+</body>
+</html>
